@@ -1,15 +1,22 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import GettingStarted from './components/GettingStarted';
+import Login from './components/Login';
+import Register from './components/Register';
+import Services from './components/Services';
 import './App.css';
 
-// client/src/App.js
-import React from 'react';
-import Services from './components/Services';
-
 function App() {
-    return (
-        <div className="App">
-            <Services />
-        </div>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<GettingStarted />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
